@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_10_20_164622) do
+ActiveRecord::Schema[7.2].define(version: 2024_10_20_170309) do
   create_table "chapters", force: :cascade do |t|
     t.string "title"
     t.text "chapter_body"
@@ -39,6 +39,37 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_20_164622) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "users", force: :cascade do |t|
+    t.boolean "is_admin"
+    t.string "user_name"
+    t.string "bio"
+    t.string "avatar"
+    t.string "mail"
+    t.boolean "is_mail_public"
+    t.string "phone"
+    t.boolean "is_phone_piblic"
+    t.integer "Chapter_id", null: false
+    t.integer "Story_id", null: false
+    t.integer "Collection_id", null: false
+    t.integer "Subs_id", null: false
+    t.integer "Like_id", null: false
+    t.integer "Comment_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["Chapter_id"], name: "index_users_on_Chapter_id"
+    t.index ["Collection_id"], name: "index_users_on_Collection_id"
+    t.index ["Comment_id"], name: "index_users_on_Comment_id"
+    t.index ["Like_id"], name: "index_users_on_Like_id"
+    t.index ["Story_id"], name: "index_users_on_Story_id"
+    t.index ["Subs_id"], name: "index_users_on_Subs_id"
+  end
+
   add_foreign_key "forks", "Chapters"
   add_foreign_key "forks", "Stories"
+  add_foreign_key "users", "Chapters"
+  add_foreign_key "users", "Collections"
+  add_foreign_key "users", "Comments"
+  add_foreign_key "users", "Likes"
+  add_foreign_key "users", "Stories"
+  add_foreign_key "users", "Subs", column: "Subs_id"
 end

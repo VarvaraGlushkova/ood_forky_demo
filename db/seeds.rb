@@ -1,9 +1,24 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
+def seed
+  reset_db
+  create_stories(10)
+  create_chapters(20)
+  create_forks(5)
+  # create_swatches(10..20)
+  # create_fills(2..8)
+  # create_colors
+end
+
+def reset_db
+  Rake::Task['db:drop'].invoke
+  Rake::Task['db:create'].invoke
+  Rake::Task['db:migrate'].invoke
+end
+
+
+# def create_stories(quantity)
+#   quantity.times do
+#     # user = User.all.sample
+#     story = Story.create(:title , :annotation)
+#     puts "Story with name #{story.name} just created"
 #   end
+# end

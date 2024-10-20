@@ -2,6 +2,11 @@
 
 <% content_for :title, "Stories" %>
 
+<h3>Menu</h3>
+<ul style="display: flex; flex-direction:row; gap: 50px">
+  <li><%= link_to "Chapters", chapters_path %></li>
+  <li><%= link_to "Stories", stories_path %></li>
+</ul>
 <h1>Stories</h1>
 
 <div id="stories">

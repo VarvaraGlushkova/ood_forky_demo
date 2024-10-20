@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  resources :users
+
+  resources :users do
+    resources :forks
+    resources :chapters
+    resources :stories
+  end
+
   resources :chapters do
     resources :forks
   end
@@ -17,5 +25,5 @@ Rails.application.routes.draw do
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
 
   # Defines the root path route ("/")
-  # root "posts#index"
+  root "stories#index"
 end

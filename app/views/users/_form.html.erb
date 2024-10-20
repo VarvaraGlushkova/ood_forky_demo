@@ -1,0 +1,87 @@
+<%= form_with(model: user) do |form| %>
+  <% if user.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+        <% user.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :is_admin, style: "display: block" %>
+    <%= form.check_box :is_admin %>
+  </div>
+
+  <div>
+    <%= form.label :user_name, style: "display: block" %>
+    <%= form.text_field :user_name %>
+  </div>
+
+  <div>
+    <%= form.label :bio, style: "display: block" %>
+    <%= form.text_field :bio %>
+  </div>
+
+  <div>
+    <%= form.label :avatar, style: "display: block" %>
+    <%= form.text_field :avatar %>
+  </div>
+
+  <div>
+    <%= form.label :mail, style: "display: block" %>
+    <%= form.text_field :mail %>
+  </div>
+
+  <div>
+    <%= form.label :is_mail_public, style: "display: block" %>
+    <%= form.check_box :is_mail_public %>
+  </div>
+
+  <div>
+    <%= form.label :phone, style: "display: block" %>
+    <%= form.text_field :phone %>
+  </div>
+
+  <div>
+    <%= form.label :is_phone_piblic, style: "display: block" %>
+    <%= form.check_box :is_phone_piblic %>
+  </div>
+
+  <div>
+    <%= form.label :Chapter_id, style: "display: block" %>
+    <%= form.text_field :Chapter_id %>
+  </div>
+
+  <div>
+    <%= form.label :Story_id, style: "display: block" %>
+    <%= form.text_field :Story_id %>
+  </div>
+
+  <div>
+    <%= form.label :Collection_id, style: "display: block" %>
+    <%= form.text_field :Collection_id %>
+  </div>
+
+  <div>
+    <%= form.label :Subs_id, style: "display: block" %>
+    <%= form.text_field :Subs_id %>
+  </div>
+
+  <div>
+    <%= form.label :Like_id, style: "display: block" %>
+    <%= form.text_field :Like_id %>
+  </div>
+
+  <div>
+    <%= form.label :Comment_id, style: "display: block" %>
+    <%= form.text_field :Comment_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
