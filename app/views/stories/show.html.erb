@@ -1,6 +1,21 @@
 <p style="color: green"><%= notice %></p>
 
+<ul style="display: flex; flex-direction:row">
+  <li><%= link_to "Chapters", chapters_path %></li>
+
+</ul>
 <%= render @story %>
+
+<h1>Chapters</h1>
+
+<div id="chapters">
+  <% story.chapters.each do |chapter| %>
+    <%= render chapter %>
+    <p>
+      <%= link_to "Show this chapter", chapter %>
+    </p>
+  <% end %>
+</div> 
 
 <div>
   <%= link_to "Edit this story", edit_story_path(@story) %> |

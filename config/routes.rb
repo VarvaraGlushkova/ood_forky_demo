@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   end
 
   resources :stories do
+    resources :chapters
     resources :forks
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

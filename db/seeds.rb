@@ -22,8 +22,19 @@ def create_annotation
   annotationst = annotation_n.join(' ').capitalize + '.'
 end
 
+def create_text
+  text_n = []
+
+  (10..300).to_a.sample.times do
+    text_n << @words.sample
+  end
+
+  textn = text_n.join(' ').capitalize + '.'
+end
+
+
 100.times do
-  story = Story.create(title: titlename, cover: titlename, annotation: annotationst, is_public: true)
+  story = Story.create(title: create_title, cover: create_title, annotation: create_annotation, is_public: true)
   puts "Story with id #{story.id} was made"
 end
 
@@ -31,7 +42,7 @@ stories = Story.all
 
 stories.each do |story|
   (3..10).to_a.sample.times do
-    chapter = Chapter.create(title:, chapter_body:, place: 1, is_public: true)
+    chapter = Chapter.create(title: create_title, chapter_body: create_text, place: 1, is_public: true)
     puts "Chapter with id #{chapter.id} was made for Story with id #{story.id}"
   end
 end
