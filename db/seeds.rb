@@ -1,18 +1,55 @@
-def seed
-  reset_db
-  create_stories(10)
-  create_chapters(20)
-  create_forks(5)
-  # create_swatches(10..20)
-  # create_fills(2..8)
-  # create_colors
+@fill_txt = "Bionore and Aden had been friends for what felt like an eternity. They met in college, bonding over late-night pizza and study sessions. Over time, their friendship evolved into something more... casual. They both agreed on a friends-with-benefits arrangement, and it seemed like the perfect solution. No strings attached, no drama, just fun. As the months went by, Aden found himself growing more and more attached to Bionore. He couldn't quite put his finger on when it started, but he remembered the way his heart skipped a beat when she smiled at him, the way his hands itched to touch her whenever she was near. He tried to brush it off as mere infatuation, but deep down, he knew it was something more."
+
+@words = @fill_txt.downcase.gsub(/[-.—,':()]/, '').gsub(/  /, ' ').split(' ')
+
+def create_title
+  title_n = []
+
+  (1..4).to_a.sample.times do
+    title_n << @words.sample
+  end
+
+  titlename = title_n.join(' ').capitalize + '.'
 end
 
-def reset_db
-  Rake::Task['db:drop'].invoke
-  Rake::Task['db:create'].invoke
-  Rake::Task['db:migrate'].invoke
+def create_annotation
+  annotation_n = []
+
+  (10..100).to_a.sample.times do
+    annotation_n << @words.sample
+  end
+
+  annotationst = annotation_n.join(' ').capitalize + '.'
 end
+
+100.times do
+  story = Story.create(title: titlename, cover: titlename, annotation: annotationst, is_public: true)
+  puts "Story with id #{story.id} was made"
+end
+
+stories = Story.all
+
+stories.each do |story|
+  (3..10).to_a.sample.times do
+    chapter = Chapter.create(title:, chapter_body:, place: 1, is_public: true)
+    puts "Chapter with id #{chapter.id} was made for Story with id #{story.id}"
+  end
+end
+# def seed
+#   reset_db
+#   create_stories(10)
+#   create_chapters(20)
+#   create_forks(5)
+#   # create_swatches(10..20)
+#   # create_fills(2..8)
+#   # create_colors
+# end
+
+# def reset_db
+#   Rake::Task['db:drop'].invoke
+#   Rake::Task['db:create'].invoke
+#   Rake::Task['db:migrate'].invoke
+# end
 
 
 # def create_stories(quantity)

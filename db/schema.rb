@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_10_20_170309) do
+ActiveRecord::Schema[7.2].define(version: 2024_10_20_182813) do
   create_table "chapters", force: :cascade do |t|
     t.string "title"
     t.text "chapter_body"
@@ -18,6 +18,8 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_20_170309) do
     t.boolean "is_public"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "story_id"
+    t.index ["story_id"], name: "index_chapters_on_story_id"
   end
 
   create_table "forks", force: :cascade do |t|
@@ -64,6 +66,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_20_170309) do
     t.index ["Subs_id"], name: "index_users_on_Subs_id"
   end
 
+  add_foreign_key "chapters", "stories"
   add_foreign_key "forks", "Chapters"
   add_foreign_key "forks", "Stories"
   add_foreign_key "users", "Chapters"
