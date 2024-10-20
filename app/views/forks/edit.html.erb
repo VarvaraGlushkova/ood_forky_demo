@@ -1,0 +1,12 @@
+<% content_for :title, "Editing fork" %>
+
+<h1>Editing fork</h1>
+
+<%= render "form", fork: @fork %>
+
+<br>
+
+<div>
+  <%= link_to "Show this fork", @fork %> |
+  <%= link_to "Back to forks", forks_path %>
+</div>

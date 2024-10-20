@@ -1,0 +1,32 @@
+<%= form_with(model: fork) do |form| %>
+  <% if fork.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(fork.errors.count, "error") %> prohibited this fork from being saved:</h2>
+
+      <ul>
+        <% fork.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :Story_id, style: "display: block" %>
+    <%= form.text_field :Story_id %>
+  </div>
+
+  <div>
+    <%= form.label :Chapter_id, style: "display: block" %>
+    <%= form.text_field :Chapter_id %>
+  </div>
+
+  <div>
+    <%= form.label :place, style: "display: block" %>
+    <%= form.number_field :place %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

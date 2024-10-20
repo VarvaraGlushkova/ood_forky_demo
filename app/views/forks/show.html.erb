@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @fork %>
+
+<div>
+  <%= link_to "Edit this fork", edit_fork_path(@fork) %> |
+  <%= link_to "Back to forks", forks_path %>
+
+  <%= button_to "Destroy this fork", @fork, method: :delete %>
+</div>

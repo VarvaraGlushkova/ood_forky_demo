@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Forks" %>
+
+<h1>Forks</h1>
+
+<div id="forks">
+  <% @forks.each do |fork| %>
+    <%= render fork %>
+    <p>
+      <%= link_to "Show this fork", fork %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New fork", new_fork_path %>
