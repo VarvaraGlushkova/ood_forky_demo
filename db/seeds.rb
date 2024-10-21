@@ -2,6 +2,18 @@
 
 @words = @fill_txt.downcase.gsub(/[-.—,':()]/, '').gsub(/  /, ' ').split(' ')
 
+def seed
+  reset_db
+  create_story(10)
+  create_chapter(3)
+end
+
+def reset_db
+  Rake::Task['db:drop'].invoke
+  Rake::Task['db:create'].invoke
+  Rake::Task['db:migrate'].invoke
+end
+
 def create_title
   title_n = []
 
@@ -32,20 +44,39 @@ def create_text
   textn = text_n.join(' ').capitalize + '.'
 end
 
-
-100.times do
-  story = Story.create(title: create_title, cover: create_title, annotation: create_annotation, is_public: true)
-  puts "Story with id #{story.id} was made"
-end
-
-stories = Story.all
-
-stories.each do |story|
-  (3..10).to_a.sample.times do
-    chapter = Chapter.create!(title: create_title, chapter_body: create_text, place: 1, is_public: true, story_id: story.id)
-    puts "Chapter with id #{chapter.id} was made for Story with id #{story.id}"
+def create_story(quantity)
+  quantity.times do
+    story = Story.create(title: create_title, cover: create_title, annotation: create_annotation, is_public: true)
+    puts "Story with id #{story.id} was made"
   end
 end
+
+def create_chapter(quantity)
+  stories = Story.all
+
+  puts stories
+
+  if stories.empty?
+    puts "No stories available to create chapters."
+    return
+  end
+
+  stories.each do |story|
+    chapter_count = quantity
+    chapter_count.times do |i|
+      chapter = Chapter.create!(
+        title: create_title,
+        chapter_body: create_text,
+        place: 1,
+        is_public: true,
+        story_id: story.id
+      )
+      puts "Chapter with id #{chapter.id} was made for Story with id #{story.id}"
+    end
+  end
+end
+
+
 # def seed
 #   reset_db
 #   create_stories(10)
@@ -70,3 +101,5 @@ end
 #     puts "Story with name #{story.name} just created"
 #   end
 # end
+
+seed
