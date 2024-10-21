@@ -1,4 +1,4 @@
 class Fork < ApplicationRecord
-  belongs_to :Story
-  belongs_to :Chapter
+  belongs_to :story
+  belongs_to :chapter
 end

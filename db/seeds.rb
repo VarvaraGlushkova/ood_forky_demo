@@ -42,7 +42,7 @@ stories = Story.all
 
 stories.each do |story|
   (3..10).to_a.sample.times do
-    chapter = Chapter.create(title: create_title, chapter_body: create_text, place: 1, is_public: true)
+    chapter = Chapter.create!(title: create_title, chapter_body: create_text, place: 1, is_public: true, story_id: story.id)
     puts "Chapter with id #{chapter.id} was made for Story with id #{story.id}"
   end
 end

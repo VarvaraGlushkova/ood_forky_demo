@@ -9,7 +9,7 @@
 <h1>Chapters</h1>
 
 <div id="chapters">
-  <% story.chapters.each do |chapter| %>
+  <% @story.chapters.each do |chapter| %>
     <%= render chapter %>
     <p>
       <%= link_to "Show this chapter", chapter %>

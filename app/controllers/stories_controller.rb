@@ -8,6 +8,7 @@ class StoriesController < ApplicationController
 
   # GET /stories/1 or /stories/1.json
   def show
+    @story = Story.find(params[:id])
   end
 
   # GET /stories/new

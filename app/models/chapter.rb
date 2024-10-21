@@ -1,4 +1,4 @@
 class Chapter < ApplicationRecord
-  has_many :Forks
-  belongs_to :Story
+  has_many :forks
+  belongs_to :story
 end
