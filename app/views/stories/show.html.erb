@@ -7,7 +7,9 @@
 
 <h1>Chapters</h1>
 
-<%= link_to "New chapter", new_chapter_path %>
+ <%= link_to "New chapter", new_chapter_path(story_id: @story.id) %>
+
+
 
 <div id="chapters">
   <% @story.chapters.each do |chapter| %>

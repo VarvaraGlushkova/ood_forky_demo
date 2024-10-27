@@ -12,7 +12,7 @@ class ChaptersController < ApplicationController
 
   # GET /chapters/new
   def new
-    @chapter = Chapter.new
+    @chapter = Chapter.new(story_id: params[:story_id])
   end
 
   # GET /chapters/1/edit
@@ -65,6 +65,6 @@ class ChaptersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def chapter_params
-      params.require(:chapter).permit(:title, :chapter_body, :is_public)
+      params.require(:chapter).permit(:title, :chapter_body, :is_public, :place)
     end
 end
