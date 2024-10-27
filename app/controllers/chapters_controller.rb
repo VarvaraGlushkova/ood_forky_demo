@@ -65,6 +65,6 @@ class ChaptersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def chapter_params
-      params.require(:chapter).permit(:title, :chapter_body, :is_public, :place)
+      params.require(:chapter).permit(:title, :chapter_body, :is_public, :place, :story_id)
     end
 end
