@@ -8,6 +8,8 @@
 
 <h1>Chapters</h1>
 
+<%= link_to "New chapter", new_chapter_path %>
+
 <div id="chapters">
   <% @story.chapters.each do |chapter| %>
     <%= render chapter %>
