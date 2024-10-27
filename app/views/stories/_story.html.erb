@@ -1,13 +1,12 @@
 <div id="<%= dom_id story %>">
+
+  <%= image_tag story.cover.url, width: 600 %>
   <p>
     <strong>Title:</strong>
     <%= story.title %>
   </p>
 
-  <p>
-    <strong>Cover:</strong>
-    <%= story.cover %>
-  </p>
+
 
   <p>
     <strong>Annotation:</strong>

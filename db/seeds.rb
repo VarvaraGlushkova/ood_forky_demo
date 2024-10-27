@@ -44,9 +44,15 @@ def create_text
   textn = text_n.join(' ').capitalize + '.'
 end
 
+def upload_random_cover
+  uploader = CoverUploader.new(Story.new, :cover)
+  uploader.cache!(File.open(Dir.glob(File.join(Rails.root, "public/autoupload/covers", "*")).sample))
+  uploader
+end
+
 def create_story(quantity)
   quantity.times do
-    story = Story.create(title: create_title, cover: create_title, annotation: create_annotation, is_public: true)
+    story = Story.create(title: create_title, annotation: create_annotation, is_public: true, cover: upload_random_cover)
     puts "Story with id #{story.id} was made"
   end
 end
@@ -75,6 +81,7 @@ def create_chapter(quantity)
     end
   end
 end
+
 
 
 # def seed
