@@ -27,5 +27,9 @@ h1 {
     display: block;
     border-radius: 15px;
     background-color: #FFA07D;
-    color: white;
+    color: black;
+}
+
+img {
+   object-fit: cover;
 }

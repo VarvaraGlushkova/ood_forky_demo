@@ -1,4 +1,12 @@
-.Q_Name {
+.Q_Name, .Q_ChapterTitle {
     font-size: 38px;
     color: black;
+}
+
+.Q_ChapterTitle {
+    margin-bottom: 10px;
+}
+
+.Q_ChapterText {
+    width: 700px;
 }

@@ -4,14 +4,11 @@
 
 
 
-<h1>Chapters</h1>
+<h1>Главы всех историй</h1>
 
 <div id="chapters">
   <% @chapters.each do |chapter| %>
     <%= render chapter %>
-    <p>
-      <%= link_to "Show this chapter", chapter %>
-    </p>
   <% end %>
 </div>
 

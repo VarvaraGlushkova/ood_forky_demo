@@ -1,22 +1,16 @@
-<div id="<%= dom_id chapter %>">
-  <p>
-    <strong>Title:</strong>
-    <%= chapter.title %>
-  </p>
+<div id="<%= dom_id chapter %>" class="M_Chapter">
+ <div class="A_ChapterContent">
+    <p class="Q_ChapterTitle">
+      <%= chapter.title %>
+    </p>
 
-  <p>
-    <strong>Chapter body:</strong>
-    <%= chapter.chapter_body %>
-  </p>
+    <p class="Q_ChapterText">
+      <%= chapter.chapter_body %>
+    </p>
+ </div>
 
-  <%# <p> %>
-    <%# <strong>Place:</strong> %>
-    <%# chapter.place %>
-  <%# </p> %>
 
-  <%# <p> %>
-    <%# <strong>Is public:</strong> %>
-    <%# chapter.is_public %>
-  <%# </p> %>
-
+  <div class="A_Button">
+      <%= link_to "Перейти в главу", chapter %>
+  </div>
 </div>

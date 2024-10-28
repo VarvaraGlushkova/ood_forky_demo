@@ -3,24 +3,31 @@
 
 <%= render @story %>
 
-<h1>Chapters</h1>
+<div class="M_StoryEditB">
+  <div class="A_Button">
+    <%= link_to "Edit this story", edit_story_path(@story) %> 
+  </div>
+  <div class="A_Button">
+      <%= button_to "Удалить историю", @story, method: :delete %>
+  </div>
+  <div class="A_Button">
+      <%= link_to "Ко всем историям", stories_path %>
+  </div>
 
- <%= link_to "New chapter", new_chapter_path(story_id: @story.id) %>
+</div>
+
+
+<h1>Главы</h1>
+
+<div class="A_Button" style="margin-left: 0;">
+  <%= link_to "Добавить главу", new_chapter_path(story_id: @story.id) %>
+</div>
 
 
 
 <div id="chapters">
   <% @story.chapters.each do |chapter| %>
     <%= render chapter %>
-    <p>
-      <%= link_to "Show this chapter", chapter %>
-    </p>
   <% end %>
 </div> 
 
-<div>
-  <%= link_to "Edit this story", edit_story_path(@story) %> |
-  <%= link_to "Back to stories", stories_path %>
-
-  <%= button_to "Destroy this story", @story, method: :delete %>
-</div>

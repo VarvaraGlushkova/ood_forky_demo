@@ -1,4 +1,4 @@
-.M_StoryCard {
+.M_StoryCard, .M_Chapter {
     display: flex;
     flex-direction: column;
     background-color: #FFDEBC;
@@ -10,4 +10,19 @@
 .M_Story {
     display: flex;
     flex-direction: row;
+}
+
+.M_Chapter {
+    padding: 30px 40px;
+}
+
+.M_StoryEditB {
+    display: flex;
+    flex-direction: row;
+    margin-left: 58%;
+    
+
+    .A_Button {
+        margin: 0 0 20px 20px;
+    }
 }
