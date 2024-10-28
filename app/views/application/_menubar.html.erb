@@ -1,8 +1,21 @@
-<nav>
-    <%= link_to "Главная", root_path %>
-    <%= link_to "Истории", stories_url %>
-    <%= link_to "О нас" %>
-    <%= link_to "Промо" %>
+<nav class= "M_Menubar">
+    <div class="A_MainLinks">
+        <%= link_to "Главная", root_path %>
+        <%= link_to "Истории", stories_url %>
+        <%= link_to "Все главы", chapters_path%>
+        <%= link_to "Промо" %>
+    </div>
+    
     <%# <% link_to "Главная", root_path %>
     <%# <% link_to "Главная", root_path %>
+
+    <div class="A_LoginMenu">
+        <% if user_signed_in? %>
+        <%= link_to current_user.email, edit_user_registration_path %>
+        <%= link_to "Выйти", destroy_user_session_path, data: { "turbo-method": :delete } %>
+        <% else %>
+        <%= link_to "Войти", new_user_session_path %>
+        <%= link_to "Зарегистрироваться", new_user_registration_path %>
+        <% end %>
+    </div>
 </nav>

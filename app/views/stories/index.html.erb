@@ -2,15 +2,17 @@
 
 <% content_for :title, "Stories" %>
 
-<h1>Stories</h1>
+<h1>Все истории</h1>
 
-<div id="stories">
+<div class="A_Button">
+  <%= link_to "Создать новую историю", new_story_path %>
+</div>
+
+
+
+<div id="stories" >
   <% @stories.each do |story| %>
     <%= render story %>
-    <p>
-      <%= link_to "Show this story", story %>
-    </p>
   <% end %>
 </div>
 
-<%= link_to "New story", new_story_path %>

@@ -4,8 +4,9 @@
 
 def seed
   reset_db
-  create_story(10)
-  create_chapter(3)
+  create_users(10)
+  create_story(20)
+  create_chapter(8)
 end
 
 def reset_db
@@ -13,6 +14,25 @@ def reset_db
   Rake::Task['db:create'].invoke
   Rake::Task['db:migrate'].invoke
 end
+
+def create_users(quantity)
+  i = 0
+
+  quantity.times do
+    user_data = {
+      email: "user_#{i}@email.com",
+      password: 'testtest'
+    }
+
+    user = User.create!(user_data)
+    puts "User created with id #{user.id}"
+
+    i += 1
+  end
+end
+
+
+
 
 def create_title
   title_n = []

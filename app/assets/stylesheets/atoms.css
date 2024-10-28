@@ -1,0 +1,14 @@
+.A_StoryContent {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px;
+    width: 500px;
+}
+
+.A_StoryImg {
+    width: 740px;
+    height: 304px;
+    border-radius: 30px;
+    overflow: hidden;
+}

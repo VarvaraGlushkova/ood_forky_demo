@@ -55,6 +55,9 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
+
+  # letter sent show gem only for dev!!!!!!
+  gem "letter_opener"
 end
 
 group :test do
