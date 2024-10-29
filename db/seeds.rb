@@ -31,7 +31,9 @@ def create_users(quantity)
   end
 end
 
-
+def get_random_bool
+  [true, false].sample # rubocop:disable Layout/SpaceInsideArrayLiteralBrackets
+end
 
 
 def create_title
@@ -73,7 +75,7 @@ end
 def create_story(quantity)
   quantity.times do
     user = User.all.sample
-    story = Story.create(title: create_title, annotation: create_annotation, is_public: true, cover: upload_random_cover, user: user)
+    story = Story.create(title: create_title, annotation: create_annotation, is_public: get_random_bool, cover: upload_random_cover, user: user)
     puts "Story with id #{story.id} and title #{story.title} was made for user #{user.id}"
   end
 end
@@ -95,7 +97,7 @@ def create_chapter(quantity)
         title: create_title,
         chapter_body: create_text,
         place: 1,
-        is_public: true,
+        is_public: story.is_public,
         story_id: story.id,
         user: story.user
       )
