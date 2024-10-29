@@ -6,6 +6,7 @@
     <title>welcome</title>
 </head>
 <body class="WelcomeBody">
+    <%= render "application/menubarindex" %>
 
     <%#= render partial: "welcome/menubar" %>
 
@@ -24,6 +25,12 @@
         <div class="Headline">
             <p>оставьте свою почту, <br> чтобы узнать о запуске!</p>
         </div>
+
+        <div id="subscriptionform" class="SubForm">
+        <%= render "subscriptions/form"%>        
+        </div>
+
+
 
         <div class="Eyes shake-right">
             <%= image_tag("eyes.png", alt: "papka") %>

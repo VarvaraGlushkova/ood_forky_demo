@@ -6,6 +6,7 @@
     <title>about us</title>
 </head>
 <body class="WelcomeBody">
+    <%= render "application/menubarabout" %>
     <div class="FstBlock">
         <div class="Pencil shake-bl">
             <%= image_tag("pencilapple.png", alt: "papka") %>
@@ -37,6 +38,10 @@
 
             <div class="Headline">
                 <p>оставьте свою почту, <br> чтобы узнать о запуске!</p>
+            </div>
+
+            <div id="subscriptionform" class="SubForm">
+                 <%= render "subscriptions/form"%>        
             </div>
 
             <div class="Books">

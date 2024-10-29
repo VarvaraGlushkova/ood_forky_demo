@@ -2,8 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
 
 
-
-
+  resources :subscriptions, only: [ :create ]
 
   namespace :admin do
     resources :users do

@@ -1,0 +1,14 @@
+<%= form_with(model: Subscription.build) do |form| %>
+
+  <div class="SubFormInner">
+    <div class="A_Mailfield">
+        <%= form.email_field :email, placeholder: 'enter your email' %>
+    </div>
+
+    <div class="A_SubmButton">
+         <%= form.submit %>
+    </div>
+
+  </div>
+
+<% end %>
