@@ -1,10 +1,16 @@
 class ChaptersController < ApplicationController
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
+  load_and_authorize_resource
+
   before_action :set_chapter, only: %i[ show edit update destroy ]
 
   # GET /chapters or /chapters.json
   def index
-    @chapters = current_user.chapters
+    if current_user
+      @chapters = current_user.chapters
+    else
+      @chapters = Chapter.where(is_public: true)
+    end
   end
 
   # GET /chapters/1 or /chapters/1.json

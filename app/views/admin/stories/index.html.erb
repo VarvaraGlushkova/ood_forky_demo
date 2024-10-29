@@ -1,0 +1,18 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Stories" %>
+
+<h1>Модерировать все истории</h1>
+
+<div class="A_Button">
+  <%= link_to "Создать новую историю", new_story_path %>
+</div>
+
+
+
+<div id="stories" >
+  <% @stories.each do |story| %>
+    <%= render story %>
+  <% end %>
+</div>
+

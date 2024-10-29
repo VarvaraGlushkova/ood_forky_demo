@@ -10,9 +10,14 @@ class Ability
     can :read, Chapter, piblic: true
 
     return unless user.present?
-    can :read, :all
-    #   return unless user.admin?
-    #   can :manage, :all
+    can :manage, Story, user: user
+    can :manage, Chapter, user: user
+
+
+    return unless user.admin?
+    can :read, Story, :all
+    can :read, Chapter, :all
+    can :manage, :all
     #
     # The first argument to `can` is the action you are giving the user
     # permission to do.

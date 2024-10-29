@@ -1,10 +1,15 @@
 class StoriesController < ApplicationController
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
+  load_and_authorize_resource
   before_action :set_story, only: %i[ show edit update destroy ]
 
   # GET /stories or /stories.json
   def index
-    @stories = current_user.stories
+    if current_user
+      @stories = current_user.stories
+    else
+      @stories = Story.where(is_public: true)
+    end
   end
 
   # GET /stories/1 or /stories/1.json
