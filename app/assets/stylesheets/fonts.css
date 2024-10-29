@@ -4,3 +4,24 @@
     font-weight: 400;
     font-style: normal;
   }
+
+  @font-face {
+    font-family: 'Gilroy';
+    src: url('Gilroy_Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'GilroyItalic';
+    src: url('Gilroy_RegularItalic.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'GilroySemibold';
+    src: url('Gilroy_SemiBold.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+  }

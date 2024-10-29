@@ -26,10 +26,77 @@ h1 {
     align-content: center;
     display: block;
     border-radius: 15px;
-    background-color: darkgray;
+    background-color: #FFA07D;
     color: black;
 }
 
 img {
    object-fit: cover;
+}
+
+.WelcomeBody {
+    background-color: #08090A;
+    font-family: "Gilroy";
+    color: #F8F6F0;
+}
+
+.M_Menubar_Promo {
+    color: #F8F6F0;
+}
+.Subhead{
+    margin: 50px 96px 0;
+    position: absolute;
+    color: #F8F6F0;
+    font-family: "GilroyItalic";
+    font-size: 40px;
+}
+
+.Headline {
+    margin: 280px 156px 0;
+    text-align: center;
+    align-content: center;
+    position: absolute;
+    color: #F8F6F0;
+    font-family: "GilroySemibold";
+    font-size: 96px;
+
+}
+.FolderImgPink {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.MadeBy{
+    top: 900px;
+    padding: 0px 100px;
+    /* margin: 0 auto; */
+    width: 1200px;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    justify-content: space-between;
+}
+
+.Cactus {
+    position: absolute;
+    transform: scale(1);
+    margin-left: -80px;
+    margin-top: 140px;
+}
+
+.Socials {
+    gap: 15px;
+    margin-top: 630px;
+    margin-left: 680px;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+}
+
+.Eyes {
+    bottom: 560px;
+    /* top: 0px; */
+    right: 340px;
+    position: absolute;
 }

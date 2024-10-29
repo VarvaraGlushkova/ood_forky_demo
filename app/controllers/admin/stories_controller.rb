@@ -30,7 +30,7 @@ class Admin::StoriesController < ApplicationController
 
     respond_to do |format|
       if @story.save
-        format.html { redirect_to @story, notice: "Story was successfully created." }
+        format.html { redirect_to admin_story_path(@story), notice: "Story was successfully created." }
         format.json { render :show, status: :created, location: @story }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -43,7 +43,7 @@ class Admin::StoriesController < ApplicationController
   def update
     respond_to do |format|
       if @story.update(story_params)
-        format.html { redirect_to @story, notice: "Story was successfully updated." }
+        format.html { redirect_to admin_story_path(@story), notice: "Story was successfully updated." }
         format.json { render :show, status: :ok, location: @story }
       else
         format.html { render :edit, status: :unprocessable_entity }

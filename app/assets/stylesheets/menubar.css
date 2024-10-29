@@ -3,12 +3,17 @@
     margin: 0 0 60px;
     display: inline-flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .A_MainLinks {
     display: flex;
     flex-direction: row;
     gap: 70px;
+
+    img{
+        transform: scale(0.4);
+    }
 }
 
 .A_LoginMenu {
