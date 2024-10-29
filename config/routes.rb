@@ -6,10 +6,12 @@ Rails.application.routes.draw do
     resources :forks
     resources :chapters
     resources :stories
+    resources :comments
   end
 
   resources :chapters do
     resources :forks
+    resources :comments
   end
 
   resources :stories do

@@ -1,9 +1,10 @@
 class StoriesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_story, only: %i[ show edit update destroy ]
 
   # GET /stories or /stories.json
   def index
-    @stories = Story.all
+    @stories = current_user.stories
   end
 
   # GET /stories/1 or /stories/1.json
@@ -66,6 +67,6 @@ class StoriesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def story_params
-      params.require(:story).permit(:title, :cover, :annotation, :cover, :is_public)
+      params.require(:story).permit(:title, :cover, :annotation, :cover, :is_public, :user_id)
     end
 end

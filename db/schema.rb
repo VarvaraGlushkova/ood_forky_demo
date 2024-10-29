@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_10_27_232257) do
+ActiveRecord::Schema[7.2].define(version: 2024_10_29_124408) do
   create_table "chapters", force: :cascade do |t|
     t.string "title"
     t.text "chapter_body"
@@ -21,6 +21,11 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_27_232257) do
     t.integer "story_id"
     t.integer "user_id"
     t.index ["story_id"], name: "index_chapters_on_story_id"
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "forks", force: :cascade do |t|
