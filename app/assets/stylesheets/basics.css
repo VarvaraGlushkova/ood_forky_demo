@@ -78,11 +78,28 @@ img {
     justify-content: space-between;
 }
 
+.MadeByPurple {
+    margin-top: 735px;
+    /* top: 900px; */
+    padding: 0px 100px;
+    /* margin: 0 auto; */
+    width: 1200px;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    justify-content: space-between;
+}
+
 .Cactus {
     position: absolute;
     transform: scale(1);
     margin-left: -80px;
     margin-top: 140px;
+}
+
+.wobble-hor-top {
+	animation: wobble-hor-top 2s ease-in-out infinite both;
 }
 
 .Socials {
@@ -100,3 +117,168 @@ img {
     right: 340px;
     position: absolute;
 }
+
+.shake-right {
+	animation: shake-right 5s cubic-bezier(0.455, 0.030, 0.515, 0.955) 4s infinite both;
+}
+
+.FstBlock {
+    display: block;
+    margin-top: 30px;
+}
+
+.LogoFolder {
+    margin: 0 auto;
+    width: fit-content;
+}
+
+.Pencil {
+    margin-top: 75px;
+    left: 280px;
+    position: absolute;
+}
+
+.shake-bl {
+	animation: shake-bl 5s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite both;
+}
+
+.DescrImg {
+    margin: 0 auto;
+    width: fit-content;
+}
+
+.BlocDescr {
+    margin-top: -4px;
+}
+
+.BlockSubAgain {
+    margin-top: 160px;
+}
+.SubFolderPurple {
+    margin: 0 auto;
+    width: fit-content;
+}
+
+.Coffee {
+    margin: 120px 0px 0px -30px;
+    position: absolute;
+}
+
+.shake-tr-cof {
+	animation: shake-tr-cof 6s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite both;
+}
+
+.Books {
+    margin-top: 200px;
+    /* bottom: 00px; */
+    right: 320px;
+    position: absolute;
+}
+
+
+@keyframes wobble-hor-top {
+    0%,
+    100% {
+      transform: translateX(0%);
+      transform-origin: 50% 50%;
+    }
+    15% {
+      transform: translateX(-30px) rotate(6deg);
+    }
+    30% {
+      transform: translateX(15px) rotate(-6deg);
+    }
+    45% {
+      transform: translateX(-15px) rotate(3.6deg);
+    }
+    60% {
+      transform: translateX(9px) rotate(-2.4deg);
+    }
+    75% {
+      transform: translateX(-6px) rotate(1.2deg);
+    }
+  }
+
+  @keyframes shake-right {
+    0%,
+    100% {
+      transform: rotate(0deg);
+      transform-origin: 100% 50%;
+    }
+    10% {
+      transform: rotate(2deg);
+    }
+    20%,
+    40%,
+    60% {
+      transform: rotate(-4deg);
+    }
+    30%,
+    50%,
+    70% {
+      transform: rotate(4deg);
+    }
+    80% {
+      transform: rotate(-2deg);
+    }
+    90% {
+      transform: rotate(2deg);
+    }
+  }
+  
+  @keyframes shake-bl {
+    0%,
+    100% {
+      transform: rotate(0deg);
+      transform-origin: 0 100%;
+    }
+    10% {
+      transform: rotate(2deg);
+    }
+    20%,
+    40%,
+    60% {
+      transform: rotate(-4deg);
+    }
+    30%,
+    50%,
+    70% {
+      transform: rotate(4deg);
+    }
+    80% {
+      transform: rotate(-2deg);
+    }
+    90% {
+      transform: rotate(2deg);
+    }
+  }
+
+  @keyframes shake-tr-cof {
+    0%,
+    100% {
+      transform: rotate(0deg);
+      transform-origin: 0 100%;
+    }
+    10% {
+      transform: rotate(2deg);
+    }
+    20%,
+    40%,
+    60% {
+      transform: rotate(-4deg);
+    }
+    30%,
+    50%,
+    70% {
+      transform: rotate(4deg);
+    }
+    80% {
+      transform: rotate(-2deg);
+    }
+    90% {
+      transform: rotate(2deg);
+    }
+  }
+  
+  
+  

@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>welcome</title>
 </head>
 <body class="WelcomeBody">
 
-    <div class="Cactus">
+    <%#= render partial: "welcome/menubar" %>
+
+    <div class="Cactus wobble-hor-top">
         <%= image_tag("cactus.png", alt: "papka") %>
     </div>
 
@@ -23,7 +25,7 @@
             <p>оставьте свою почту, <br> чтобы узнать о запуске!</p>
         </div>
 
-        <div class="Eyes">
+        <div class="Eyes shake-right">
             <%= image_tag("eyes.png", alt: "papka") %>
         </div>
 
