@@ -23,7 +23,9 @@ class StoriesController < ApplicationController
 
   # POST /stories or /stories.json
   def create
-    @story = Story.new(story_params)
+    # story_params.merge(story: { user_id: current_user.id })
+
+    @story = current_user.stories.new(story_params)
 
     respond_to do |format|
       if @story.save
@@ -67,6 +69,6 @@ class StoriesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def story_params
-      params.require(:story).permit(:title, :cover, :annotation, :cover, :is_public, :user_id)
+      params.require(:story).permit(:title, :cover, :annotation, :cover, :is_public)
     end
 end

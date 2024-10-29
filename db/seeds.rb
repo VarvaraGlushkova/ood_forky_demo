@@ -5,7 +5,7 @@
 def seed
   reset_db
   create_users(10)
-  create_story(20)
+  create_story(30)
   create_chapter(40)
 end
 
@@ -71,8 +71,8 @@ def upload_random_cover
 end
 
 def create_story(quantity)
-  user = User.all.sample
   quantity.times do
+    user = User.all.sample
     story = Story.create(title: create_title, annotation: create_annotation, is_public: true, cover: upload_random_cover, user: user)
     puts "Story with id #{story.id} and title #{story.title} was made for user #{user.id}"
   end

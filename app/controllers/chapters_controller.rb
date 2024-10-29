@@ -4,7 +4,7 @@ class ChaptersController < ApplicationController
 
   # GET /chapters or /chapters.json
   def index
-    @chapters = Chapter.all
+    @chapters = current_user.chapters
   end
 
   # GET /chapters/1 or /chapters/1.json
@@ -22,7 +22,7 @@ class ChaptersController < ApplicationController
 
   # POST /chapters or /chapters.json
   def create
-    @chapter = Chapter.new(chapter_params)
+    @chapter = current_user.chapters.new(chapter_params)
 
     respond_to do |format|
       if @chapter.save

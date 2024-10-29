@@ -16,6 +16,9 @@
     <%= form.text_field :title %>
   </div>
 
+    <%= form.collection_select :story_id, current_user.stories.order(:title), :id, :title, include_blank: false %>
+
+
   <div>
     <%= form.label :chapter_body, style: "display: block" %>
     <%= form.text_area :chapter_body %>
