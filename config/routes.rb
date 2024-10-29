@@ -1,28 +1,28 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :users
 
-  resources :users do
-    resources :forks
-    resources :chapters
-    resources :stories
-    resources :comments
-  end
 
-  resources :chapters do
-    resources :forks
-    resources :comments
-  end
 
-  resources :stories do
-    resources :chapters
-    resources :forks
-  end
 
 
   namespace :admin do
-    resources :stories, only: [ :index ]
- end
+    resources :users do
+      resources :forks
+      resources :chapters
+      resources :stories
+      resources :comments
+    end
+
+    resources :chapters do
+      resources :forks
+      resources :comments
+    end
+
+    resources :stories do
+      resources :chapters
+      resources :forks
+    end
+  end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -34,5 +34,6 @@ Rails.application.routes.draw do
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
 
   # Defines the root path route ("/")
-  root "stories#index"
+  root "welcome#index"
+  get "about_us", to: "welcome#about_us", as: "welcome_about_us"
 end

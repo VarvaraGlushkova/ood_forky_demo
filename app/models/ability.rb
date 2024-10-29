@@ -15,8 +15,6 @@ class Ability
 
 
     return unless user.admin?
-    can :read, Story, :all
-    can :read, Chapter, :all
     can :manage, :all
     #
     # The first argument to `can` is the action you are giving the user

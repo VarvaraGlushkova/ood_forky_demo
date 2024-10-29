@@ -1,4 +1,4 @@
-class ForksController < ApplicationController
+class Admin::ForksController < ApplicationController
   before_action :set_fork, only: %i[ show edit update destroy ]
 
   # GET /forks or /forks.json

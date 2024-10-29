@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @chapter %>
+
+<div>
+  <%= link_to "Edit this chapter", edit_admin_chapter_path(@chapter) %> |
+  <%= link_to "Back to chapters", admin_chapters_path(chapters) %>
+
+  <%= button_to "Destroy this chapter", admin_chapter_path(@chapter), method: :delete %>
+</div>

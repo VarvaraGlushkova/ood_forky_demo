@@ -1,4 +1,4 @@
-class ChaptersController < ApplicationController
+class Admin::ChaptersController < ApplicationController
   # before_action :authenticate_user!
   load_and_authorize_resource
 
@@ -6,11 +6,7 @@ class ChaptersController < ApplicationController
 
   # GET /chapters or /chapters.json
   def index
-    if current_user
-      @chapters = current_user.chapters
-    else
-      @chapters = Chapter.where(is_public: true)
-    end
+    @chapters = Chapter.all
   end
 
   # GET /chapters/1 or /chapters/1.json

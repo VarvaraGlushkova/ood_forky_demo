@@ -5,9 +5,9 @@
         <% if user_signed_in? && current_user.admin? %>
              <%= link_to "Модерировать истории", admin_stories_url %>
         <%else%>
-             <%= link_to "Истории", stories_url %>
+             <%= link_to "Истории", admin_stories_url %>
         <%end%>
-        <%= link_to "Все главы", chapters_path%>
+        <%= link_to "Все главы", admin_chapters_path%>
 
         <%= link_to "Промо" %>
     </div>
