@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
 
+  #this routes define how view sources work NOW ONLY ADMIN
 
   resources :subscriptions, only: [ :create ]
 
