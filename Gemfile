@@ -36,7 +36,7 @@ gem "bootsnap", require: false
 
 
 # для работы с изображениями
-gem "carrierwave", "~> 3.0"
+gem "carrierwave", "~> 3.1"
 
 # для юзеров и прочей белиберды типа админского доступа
 gem "devise"
